@@ -10,7 +10,7 @@ export const getCurrencyAction = () => (dispatch) => {
       const currencyArray = Object.values(response);
       const filteredArray = currencyArray.filter(
         (currency) => currency.codein !== 'BRLT',
-      );
+      ).map((currency) => currency.code);
       dispatch({ type: GET_CURRENCY, payload: filteredArray });
     });
 };
