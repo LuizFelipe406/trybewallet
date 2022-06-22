@@ -1,0 +1,38 @@
+.header-main {
+  align-items: center;
+  background-color: #588157;
+  display: flex;
+  font-size: 1.2em;
+  height: 10vh;
+  justify-content: space-between;
+}
+
+.header-title {
+  align-items: center;
+  color: white;
+  display: flex;
+  margin: 0 60px;
+}
+
+.info-container {
+  display: flex;
+  margin: 0 30px;
+}
+
+.user-info {
+  align-items: center;
+  color: white;
+  display: flex;
+  margin-right: 30px;
+}
+
+.wallet-info {
+  align-items: center;
+  color: white;
+  display: flex;
+  margin-right: 30px;
+}
+
+.wallet-span {
+  padding-right: 5px;
+}
