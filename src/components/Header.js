@@ -9,22 +9,25 @@ class Header extends React.Component {
     return (
       <div className="header-main">
         <div className="header-title">
-          <h1>
-            TrybeWallet
-          </h1>
-          <span className="material-symbols-outlined wallet-icon">
-            account_balance_wallet
-          </span>
+          <img src="http://trybewallet.surge.sh/static/media/wallet.c40086e0.png" alt="imagem de carteira" />
+          <div className="title">
+            <h1>TR</h1>
+            <h1 className="title-green">Y</h1>
+            <h1>BE WALLET</h1>
+          </div>
         </div>
         <div className="info-container">
           <div className="user-info">
-            <span className="material-symbols-outlined">
+            <span className="material-symbols-outlined icon">
               account_circle
             </span>
             <span data-testid="email-field">{ email }</span>
           </div>
           <div className="wallet-info">
-            <span className="wallet-span">Dispesa Total:</span>
+            <span className="material-symbols-outlined icon">
+              monetization_on
+            </span>
+            <span className="wallet-span">R$:</span>
             <span className="wallet-span" data-testid="total-field">{ total }</span>
             <span
               className="wallet-span"

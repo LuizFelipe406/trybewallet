@@ -1,6 +1,6 @@
 .header-main {
   align-items: center;
-  background-color: #588157;
+  background-color: #383838;
   display: flex;
   font-size: 1.2em;
   height: 10vh;
@@ -12,6 +12,14 @@
   color: white;
   display: flex;
   margin: 0 60px;
+}
+
+.title {
+  display: flex;
+}
+
+.title-green {
+  color: #588157;
 }
 
 .info-container {
@@ -35,4 +43,13 @@
 
 .wallet-span {
   padding-right: 5px;
+}
+
+img {
+  margin-right: 15px;
+  width: 50px;
+}
+
+.icon {
+  margin-right: 5px;
 }

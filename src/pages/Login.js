@@ -34,11 +34,9 @@ class Login extends React.Component {
         <form className="login-form">
           <div className="login-title">
             <h1>
-              TrybeWallet
+              TRYBE WALLET
             </h1>
-            <span className="material-symbols-outlined wallet-icon">
-              account_balance_wallet
-            </span>
+            <img src="http://trybewallet.surge.sh/static/media/wallet.c40086e0.png" alt="imagem de carteira" />
           </div>
           <input
             className="input"
