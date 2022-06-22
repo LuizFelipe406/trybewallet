@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { sendEmailAction } from '../actions';
+import '../css/Login.css';
 
 class Login extends React.Component {
   state = {
@@ -29,9 +30,18 @@ class Login extends React.Component {
     const minPasswordLength = 6;
     const isValid = !((emailRegex.test(email) && senha.length >= minPasswordLength));
     return (
-      <div>
-        <form>
+      <div className="page">
+        <form className="login-form">
+          <div className="login-title">
+            <h1>
+              TrybeWallet
+            </h1>
+            <span className="material-symbols-outlined wallet-icon">
+              account_balance_wallet
+            </span>
+          </div>
           <input
+            className="input"
             type="email"
             placeholder="Email"
             data-testid="email-input"
@@ -40,8 +50,9 @@ class Login extends React.Component {
             onChange={ this.handleChange }
           />
           <input
+            className="input"
             type="password"
-            placeholder="senha"
+            placeholder="Senha"
             data-testid="password-input"
             minLength="6"
             name="senha"
@@ -49,9 +60,11 @@ class Login extends React.Component {
             onChange={ this.handleChange }
           />
           <button
+            className="button"
             type="button"
             onClick={ this.handleClick }
             disabled={ isValid }
+            style={ { backgroundColor: isValid ? 'grey' : 'cornflowerBlue' } }
           >
             Entrar
           </button>
