@@ -5,7 +5,7 @@ import '../css/Header.css';
 
 class Header extends React.Component {
   render() {
-    const { email, currency, total } = this.props;
+    const { email, moeda, expenses } = this.props;
     return (
       <div className="header-main">
         <div className="header-title">
@@ -28,12 +28,23 @@ class Header extends React.Component {
               monetization_on
             </span>
             <span className="wallet-span">R$:</span>
-            <span className="wallet-span" data-testid="total-field">{ total }</span>
+            <span className="wallet-span" data-testid="total-field">
+              {
+                expenses.reduce((acc, curr) => {
+                  const { value, currency, exchangeRates } = curr;
+                  const preco = parseFloat(value);
+                  const cambio = parseFloat(exchangeRates[currency].ask);
+                  const soma = preco * cambio;
+                  const correct = Math.floor(soma * 100) / 100;
+                  return acc + correct;
+                }, 0)
+              }
+            </span>
             <span
               className="wallet-span"
               data-testid="header-currency-field"
             >
-              { currency }
+              { moeda }
             </span>
           </div>
         </div>
@@ -44,14 +55,14 @@ class Header extends React.Component {
 
 const mapStateToProps = (state) => ({
   email: state.user.email,
-  currency: 'BRL',
-  total: '0',
+  moeda: 'BRL',
+  expenses: state.wallet.expenses,
 });
 
 Header.propTypes = {
   email: PropTypes.string.isRequired,
-  currency: PropTypes.string.isRequired,
-  total: PropTypes.string.isRequired,
+  moeda: PropTypes.string.isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default connect(mapStateToProps)(Header);

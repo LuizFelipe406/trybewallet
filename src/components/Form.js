@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { saveExpenseAction } from '../actions';
+
+const alimentacao = 'Alimentação';
 
 class Form extends React.Component {
   state ={
@@ -8,13 +11,26 @@ class Form extends React.Component {
     value: '',
     currency: 'USD',
     method: 'Dinheiro',
-    tag: 'Alimentação',
+    tag: alimentacao,
   };
 
   handleChange = ({ target }) => {
     const { name, value } = target;
     this.setState({ [name]: value });
   };
+
+  handleClick =() => {
+    const { saveExpense } = this.props;
+    const estado = this.state;
+    saveExpense(estado);
+    this.setState({
+      description: '',
+      value: '',
+      currency: 'USD',
+      method: 'Dinheiro',
+      tag: alimentacao,
+    });
+  }
 
   render() {
     const { currencies } = this.props;
@@ -88,6 +104,12 @@ class Form extends React.Component {
             <option value="Saúde">Saúde</option>
           </select>
         </label>
+        <button
+          type="button"
+          onClick={ this.handleClick }
+        >
+          Adicionar despesa
+        </button>
       </form>);
   }
 }
@@ -96,8 +118,13 @@ const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
 });
 
+const mapDispatchToProps = (dispatch) => ({
+  saveExpense: (expense) => dispatch(saveExpenseAction(expense)),
+});
+
 Form.propTypes = {
   currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  saveExpense: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(Form);
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
