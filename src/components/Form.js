@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { saveExpenseAction } from '../actions';
+import '../css/Form.css';
 
 const alimentacao = 'Alimentação';
 
@@ -36,32 +37,37 @@ class Form extends React.Component {
     const { currencies } = this.props;
     const { description, value, currency, method, tag } = this.state;
     return (
-      <form>
+      <form className="form-expenses">
         <label htmlFor="description-input">
           Descrição:
           <input
+            className="expenses-input"
             name="description"
             value={ description }
             id="description-input"
             type="text"
             data-testid="description-input"
             onChange={ this.handleChange }
+            placeholder="Ex: McDonald's"
           />
         </label>
         <label htmlFor="value-input">
           Valor:
           <input
+            className="expenses-input"
             name="value"
             value={ value }
             id="value-input"
             type="text"
             data-testid="value-input"
             onChange={ this.handleChange }
+            placeholder="R$ 0,00"
           />
         </label>
         <label htmlFor="currency">
           Moeda:
           <select
+            className="expenses-select"
             id="currency"
             name="currency"
             value={ currency }
@@ -77,6 +83,7 @@ class Form extends React.Component {
         <label htmlFor="method">
           Método de Pagamento:
           <select
+            className="expenses-select payment"
             name="method"
             id="method"
             data-testid="method-input"
@@ -91,6 +98,7 @@ class Form extends React.Component {
         <label htmlFor="tag">
           Categoria:
           <select
+            className="expenses-select"
             name="tag"
             id="tag"
             data-testid="tag-input"
@@ -107,6 +115,7 @@ class Form extends React.Component {
         <button
           type="button"
           onClick={ this.handleClick }
+          className="btn-expenses"
         >
           Adicionar despesa
         </button>

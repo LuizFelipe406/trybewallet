@@ -1,0 +1,51 @@
+.form-expenses {
+  align-items: center;
+  background-color: #222;
+  color: #588157;
+  display: flex;
+  font-size: 1.3em;
+  height: 15vh;
+  justify-content: space-around;
+}
+
+.expenses-input {
+  background: #efefef;
+  border: 0;
+  border-radius: 3px;
+  color: black;
+  font-weight: 400;
+  margin-left: 10px;
+  outline: 0;
+  padding: 10px 0 10px 15px;
+  transition: all 0.3s ease-in-out;
+  width: 190px;
+}
+
+.expenses-select {
+  background: #efefef;
+  border: 0;
+  border-radius: 3px;
+  color: black;
+  font-weight: 400;
+  margin-left: 10px;
+  outline: 0;
+  padding: 10px 0 10px 15px;
+  transition: all 0.3s ease-in-out;
+  width: 110px;
+}
+
+.payment {
+  width: 150px;
+}
+
+.btn-expenses {
+  background-color: #588157;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  font-weight: 400;
+  outline: 0;
+  padding: 10px 15px;
+  transition: all 0.3s ease-in-out;
+  width: 110px;
+}
