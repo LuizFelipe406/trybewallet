@@ -24,3 +24,22 @@ table {
   letter-spacing: 1px;
   width: 100%;
 }
+
+.btn-edit {
+  background-color: #ffe1a8;
+  border: none;
+  border-radius: 3px;
+  font-size: 1em;
+  margin-right: 8px;
+  padding: 5px 10px;
+}
+
+.btn-delete {
+  background-color: #f95738;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-size: 1em;
+  margin-left: 8px;
+  padding: 5px 10px;
+}

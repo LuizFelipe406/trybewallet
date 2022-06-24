@@ -52,6 +52,7 @@ class Table extends React.Component {
                   <td>{ tag }</td>
                   <td>
                     <button
+                      className="btn-edit"
                       data-testid="edit-btn"
                       type="button"
                       onClick={ () => this.handleClickEdit(id) }
@@ -59,6 +60,7 @@ class Table extends React.Component {
                       Editar
                     </button>
                     <button
+                      className="btn-delete"
                       data-testid="delete-btn"
                       type="button"
                       onClick={ () => this.handleClickDelete(id) }

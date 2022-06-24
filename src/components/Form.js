@@ -13,14 +13,21 @@ class Form extends React.Component {
     currency: 'USD',
     method: 'Dinheiro',
     tag: alimentacao,
+    editing: true,
   };
 
-  componentDidMount() {
-    const { idToEdit, expenses, editor } = this.props;
-    if (editor) {
-      const currentEdit = expenses.find((expense) => expense.id === idToEdit);
-      this.setState(currentEdit);
+  componentDidUpdate() {
+    const { editor } = this.props;
+    const { editing } = this.state;
+    if (editor && editing) {
+      this.getCurrentExpense();
     }
+  }
+
+  getCurrentExpense = () => {
+    const { expenses, idToEdit } = this.props;
+    const currentEdit = expenses.find((expense) => expense.id === idToEdit);
+    this.setState({ ...currentEdit, editing: false });
   }
 
   handleChange = ({ target }) => {
@@ -31,6 +38,7 @@ class Form extends React.Component {
   handleClick =() => {
     const { saveExpense } = this.props;
     const estado = this.state;
+    delete estado.editing;
     saveExpense(estado);
     this.setState({
       description: '',
@@ -44,6 +52,7 @@ class Form extends React.Component {
   handleClickEdit = () => {
     const { updateExpense } = this.props;
     const estado = this.state;
+    delete estado.editing;
     updateExpense(estado);
     this.setState({
       description: '',
