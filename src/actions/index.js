@@ -2,6 +2,7 @@
 export const LOGIN_EMAIL = 'LOGIN_EMAIL';
 export const GET_CURRENCY = 'GET_CURRENCY';
 export const SAVE_EXPENSE = 'SAVE_EXPENSE';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 export const sendEmailAction = (payload) => ({ type: LOGIN_EMAIL, payload });
 export const getCurrencyAction = () => (dispatch) => {
@@ -28,3 +29,5 @@ export const saveExpenseAction = (expense) => (dispatch) => {
       dispatch({ type: SAVE_EXPENSE, payload: expenseObject });
     });
 };
+
+export const deleteExpenseAction = (id) => ({ type: DELETE_EXPENSE, payload: id });
