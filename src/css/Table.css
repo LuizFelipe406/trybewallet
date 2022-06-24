@@ -1,3 +1,7 @@
+body {
+  background-color: #588157;
+}
+
 td , th {
   border: 1px solid rgb(190, 190, 190);
   padding: 10px;
@@ -7,9 +11,16 @@ td {
   text-align: center;
 }
 
+th {
+  background-color: #222;
+  color: #588157;
+}
+
 table {
+  background-color: white;
   border: 2px solid rgb(200, 200, 200);
   border-collapse: collapse;
-  font-size: 0.8rem;
+  font-size: 1em;
   letter-spacing: 1px;
+  width: 100%;
 }
