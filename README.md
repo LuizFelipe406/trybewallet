@@ -1,5 +1,8 @@
 # Projeto TrybeWallet$
 
+  <summary><strong>👨‍💻 Como Rodar</strong></summary><br />
+  - Apos realizar o clone do repositorio, utilize o npm install e após isso npm start
+
   <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
 
   Neste projeto foi desenvolvido uma carteira de controle de gastos com conversor de moedas, ao utilizar essa aplicação um usuário é capaz de:
