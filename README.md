@@ -1,7 +1,13 @@
 # Projeto TrybeWallet$
 
-  <summary><strong>👨‍💻 Como Rodar</strong></summary><br />
-    <summary> Apos realizar o clone do repositorio, utilize o npm install e após isso npm start;</summary><br />
+   <summary><strong>👨‍💻Como Rodar</strong></summary><br />
+
+  Neste projeto foi utilizado o npm para o gereciamento de pacotes, portanto antes de começar garanta que esta usando a ultima versão disponivel:
+
+  - Clonar o Repositorio através do: git clone;
+  - Acessar a pasta do repositorio;
+  - Utilizar o comando: npm install;
+  - Utilizar o comando: npm start, para abrir o projeto no seu navegador
 
   <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
 
