@@ -1,7 +1,7 @@
 # Projeto TrybeWallet$
 
   <summary><strong>👨‍💻 Como Rodar</strong></summary><br />
-  - Apos realizar o clone do repositorio, utilize o npm install e após isso npm start
+    <summary> Apos realizar o clone do repositorio, utilize o npm install e após isso npm start;</summary><br />
 
   <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
 
