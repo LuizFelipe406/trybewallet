@@ -1,7 +1,7 @@
 {
   "name": "sd-0x-project-trybewallet",
   "version": "0.1.0",
-  "homepage": "trybewallet/",
+  "homepage": "https://luizfelipe406.github.io/trybewallet/",
   "private": true,
   "engines": {
     "node": "16"
