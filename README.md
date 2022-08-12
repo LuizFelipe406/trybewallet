@@ -1,6 +1,6 @@
 # Projeto TrybeWallet$
 
-   <summary><strong>👨‍💻Como Rodar</strong></summary><br />
+   <summary><strong>👨‍💻 Como Rodar</strong></summary><br />
 
   Neste projeto foi utilizado o npm para o gereciamento de pacotes, portanto antes de começar garanta que esta usando a ultima versão disponivel:
 
