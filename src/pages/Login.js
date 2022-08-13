@@ -67,7 +67,7 @@ class Login extends React.Component {
             Entrar
           </button>
         </form>
-        { isLogin && <Redirect to="/trybewallet/carteira" />}
+        { isLogin && <Redirect to="/carteira" />}
       </div>
     );
   }
