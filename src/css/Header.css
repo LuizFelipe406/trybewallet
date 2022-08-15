@@ -53,3 +53,18 @@ img {
 .icon {
   margin-right: 5px;
 }
+
+@media screen and ( max-width : 768px ) {
+
+  .header-main {
+    align-items: center;
+    background-color: #383838;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    height: fit-content;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    width: 100vw;
+  }
+}
