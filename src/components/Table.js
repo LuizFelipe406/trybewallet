@@ -18,63 +18,65 @@ class Table extends React.Component {
   render() {
     const { expenses } = this.props;
     return (
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">Descrição</th>
-            <th scope="col">Valor</th>
-            <th scope="col">Moeda</th>
-            <th scope="col">Câmbio utilizado</th>
-            <th scope="col">Valor convertido</th>
-            <th scope="col">Moeda de conversão</th>
-            <th scope="col">Método de pagamento</th>
-            <th scope="col">Tag</th>
-            <th scope="col">Editar/Excluir</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            expenses.map((exp) => {
-              const {
-                id, description, value, currency, exchangeRates, method, tag } = exp;
-              const currencyName = exchangeRates[currency].name;
-              const soma = parseFloat(value) * parseFloat(exchangeRates[currency].ask);
-              const correctValue = Math.floor(soma * 100) / 100;
-              return (
-                <tr key={ id }>
-                  <td>{ description }</td>
-                  <td>{ parseFloat(value).toFixed(2) }</td>
-                  <td>{ currencyName.replace('/Real Brasileiro', '') }</td>
-                  <td>{ parseFloat(exchangeRates[currency].ask).toFixed(2) }</td>
-                  <td>{ correctValue }</td>
-                  <td>Real</td>
-                  <td>{ method }</td>
-                  <td>{ tag }</td>
-                  <td>
-                    <button
-                      className="btn-edit"
-                      data-testid="edit-btn"
-                      type="button"
-                      onClick={ () => this.handleClickEdit(id) }
-                    >
-                      Editar
-                    </button>
-                    <button
-                      className="btn-delete"
-                      data-testid="delete-btn"
-                      type="button"
-                      onClick={ () => this.handleClickDelete(id) }
-                    >
-                      Excluir
-                    </button>
+      <div className="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Descrição</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Moeda</th>
+              <th scope="col">Câmbio utilizado</th>
+              <th scope="col">Valor convertido</th>
+              <th scope="col">Moeda de conversão</th>
+              <th scope="col">Método de pagamento</th>
+              <th scope="col">Tag</th>
+              <th scope="col">Editar/Excluir</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              expenses.map((exp) => {
+                const {
+                  id, description, value, currency, exchangeRates, method, tag } = exp;
+                const currencyName = exchangeRates[currency].name;
+                const soma = parseFloat(value) * parseFloat(exchangeRates[currency].ask);
+                const correctValue = Math.floor(soma * 100) / 100;
+                return (
+                  <tr key={ id }>
+                    <td>{ description }</td>
+                    <td>{ parseFloat(value).toFixed(2) }</td>
+                    <td>{ currencyName.replace('/Real Brasileiro', '') }</td>
+                    <td>{ parseFloat(exchangeRates[currency].ask).toFixed(2) }</td>
+                    <td>{ correctValue }</td>
+                    <td>Real</td>
+                    <td>{ method }</td>
+                    <td>{ tag }</td>
+                    <td className="btn-container">
+                      <button
+                        className="btn-edit"
+                        data-testid="edit-btn"
+                        type="button"
+                        onClick={ () => this.handleClickEdit(id) }
+                      >
+                        Editar
+                      </button>
+                      <button
+                        className="btn-delete"
+                        data-testid="delete-btn"
+                        type="button"
+                        onClick={ () => this.handleClickDelete(id) }
+                      >
+                        Excluir
+                      </button>
 
-                  </td>
-                </tr>
-              );
-            })
-          }
-        </tbody>
-      </table>
+                    </td>
+                  </tr>
+                );
+              })
+            }
+          </tbody>
+        </table>
+      </div>
     );
   }
 }

@@ -19,6 +19,7 @@ class Form extends React.Component {
   componentDidUpdate() {
     const { editor } = this.props;
     const { editing } = this.state;
+    console.log(editing);
     if (editor && editing) {
       this.getCurrentExpense();
     }
@@ -46,12 +47,13 @@ class Form extends React.Component {
       currency: 'USD',
       method: 'Dinheiro',
       tag: alimentacao,
+      editing: true,
     });
   }
 
   handleClickEdit = () => {
     const { updateExpense } = this.props;
-    const estado = this.state;
+    const estado = { ...this.state };
     delete estado.editing;
     updateExpense(estado);
     this.setState({
@@ -60,6 +62,7 @@ class Form extends React.Component {
       currency: 'USD',
       method: 'Dinheiro',
       tag: alimentacao,
+      editing: true,
     });
   }
 
