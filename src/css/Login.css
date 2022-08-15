@@ -48,3 +48,18 @@ img {
   margin-left: 8px;
   width: 35px;
 }
+
+@media screen and ( max-width : 768px ) {
+
+  .login-form {
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    justify-content: center;
+    padding-bottom: 20px;
+    width: 80%;
+  }
+}
