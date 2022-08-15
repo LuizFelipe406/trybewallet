@@ -86,8 +86,8 @@ class Form extends React.Component {
     );
     const addForm = (
       <form className="form-expenses">
-        <label htmlFor="description-input">
-          Descrição:
+        <label htmlFor="description-input" className="expenses-label">
+          <span className="label-span">Descrição:</span>
           <input
             className="expenses-input"
             name="description"
@@ -99,8 +99,8 @@ class Form extends React.Component {
             placeholder="Ex: McDonald's"
           />
         </label>
-        <label htmlFor="value-input">
-          Valor:
+        <label htmlFor="value-input" className="expenses-label">
+          <span className="label-span">Valor:</span>
           <input
             className="expenses-input"
             name="value"
@@ -112,8 +112,8 @@ class Form extends React.Component {
             placeholder="R$ 0,00"
           />
         </label>
-        <label htmlFor="currency">
-          Moeda:
+        <label htmlFor="currency" className="expenses-label">
+          <span className="label-span">Moeda:</span>
           <select
             className="expenses-select"
             id="currency"
@@ -128,8 +128,8 @@ class Form extends React.Component {
             }
           </select>
         </label>
-        <label htmlFor="method">
-          Método de Pagamento:
+        <label htmlFor="method" className="expenses-label">
+          <span className="label-span">Método de Pagamento:</span>
           <select
             className="expenses-select payment"
             name="method"
@@ -143,8 +143,8 @@ class Form extends React.Component {
             <option value="Cartão de débito">Cartão de débito</option>
           </select>
         </label>
-        <label htmlFor="tag">
-          Categoria:
+        <label htmlFor="tag" className="expenses-label">
+          <span className="label-span">Categoria:</span>
           <select
             className="expenses-select"
             name="tag"
